@@ -1,2 +1,2 @@
 # ProjetAndroid
-mon prjet android pour le S4
+mon projet android pour le S4
