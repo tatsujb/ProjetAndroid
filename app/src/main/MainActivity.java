@@ -9,7 +9,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.lang.Override;
+
 public class MainActivity extends AppCompatActivity {
+    private Button playButton;
+    private Button scoreButton;
+    private RadioGroup radioLevelGroup;
+    private RadioButton radioLevelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +23,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        playButton = (Button) findViewById(R.id.playButton);
+        scoreButton = (Button) findViewById(R.id.scoreButton);
+        playListener playListener = new playListener();
+        scoreListener playListener = new scoreListener();
+        playButton.setOnClickListener(playListener);
+        scoreButton.setOnClickListener(scoreListener);
+    }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    class playListener extends View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            //activity d'origine vers nvlle activity
+            int selectedId = radioLevelGroup.getCheckedRadioButtonId();
+
+            // find the radiobutton by returned id
+            radioLevelButton = (RadioButton) findViewById(selectedId);
+
+            Intent intent = new Intent(MainActivity.this, PlayActivity.class);
+            intent.putExtra("level",int selectedId = radioLevelGroup.getCheckedRadioButtonId();
+
+            // find the radiobutton by returned id
+            radioSexButton = (RadioButton) findViewById(selectedId);
+            );
+            startActivity(intent);
+        }
+}
+    class scoreListener extends View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -49,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
