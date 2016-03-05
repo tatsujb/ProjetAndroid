@@ -31,27 +31,26 @@ public class MainActivity extends AppCompatActivity {
         scoreButton.setOnClickListener(scoreListener);
     }
 
-    class playListener extends View.OnClickListener{
+    class playListener extends View.OnClickListener {
         @Override
-        public void onClick(View v){
-            //activity d'origine vers nvlle activity
+        public void onClick(View v) {
+
             int selectedId = radioLevelGroup.getCheckedRadioButtonId();
 
             // find the radiobutton by returned id
-            radioLevelButton = (RadioButton) findViewById(selectedId);
+            this.radioLevelButton = (RadioButton) findViewById(selectedId);
+            //activity d'origine vers nvlle activity
 
             Intent intent = new Intent(MainActivity.this, PlayActivity.class);
-            intent.putExtra("level",int selectedId = radioLevelGroup.getCheckedRadioButtonId();
+            intent.putExtra("level", int selectedId = radioLevelGroup.getCheckedRadioButtonId();
 
-            // find the radiobutton by returned id
-            radioSexButton = (RadioButton) findViewById(selectedId);
-            );
             startActivity(intent);
         }
-}
-    class scoreListener extends View.OnClickListener{
+    }
+
+    class scoreListener extends View.OnClickListener {
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
             startActivity(intent);
         }
@@ -75,8 +74,27 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
+        if (id == R.id.french) {
+            LocaleHelper.setLocale(this, "fr");
+            updateTranslate();
+        }
+        if (id == R.id.english) {
+            LocaleHelper.setLocale(this, "en");
+            updateTranslate();
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void updateTranslate() {
+
+        Resources resources = getResources();
+
+        this.scoreButton.setText(resources.getString(R.string.score));
+        this.playButton.setText(resources.getString(R.string.play));
+        this.radioLevelButton = (RadioButton) findViewById(0);
+        this.radioLevelButton.setText(resources.getString(R.string.easyChoice));
+        this.radioLevelButton = (RadioButton) findViewById(1);
+        this.radioLevelButton.setText(resources.getString(R.string.hardChoice));
     }
 
 }
