@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         playButton = (Button) findViewById(R.id.playButton);
         scoreButton = (Button) findViewById(R.id.scoreButton);
         playListener playListener = new playListener();
-        scoreListener playListener = new scoreListener();
+        scoreListener scoreListener = new scoreListener();
         playButton.setOnClickListener(playListener);
         scoreButton.setOnClickListener(scoreListener);
     }
@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             //activity d'origine vers nvlle activity
 
             Intent intent = new Intent(MainActivity.this, PlayActivity.class);
-            intent.putExtra("level", int selectedId = radioLevelGroup.getCheckedRadioButtonId();
+            int selectedId = radioLevelGroup.getCheckedRadioButtonId()
+            intent.putExtra("level", findViewById(selectedId).get);
 
             startActivity(intent);
         }
