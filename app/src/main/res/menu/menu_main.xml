@@ -8,4 +8,12 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/english"
+        android:checkable="true"
+        android:title="@string/English"/>
+    <item
+        android:id="@+id/french"
+        android:checkable="true"
+        android:title="@string/French"/>
 </menu>
