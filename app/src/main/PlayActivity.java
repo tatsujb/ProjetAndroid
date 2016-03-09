@@ -40,6 +40,10 @@ public class PlayActivity extends AppCompatActivity {
                 timerTextView.setText(R.string.finished);
             }
         }.start();
+        //actual gameplay
+        while(!timerTextView.getText().equals(R.string.finished)){
+
+        }
 
     }
 

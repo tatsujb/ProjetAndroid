@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
             Intent intent = new Intent(MainActivity.this, PlayActivity.class);
             int selectedId = radioLevelGroup.getCheckedRadioButtonId()
-            intent.putExtra("level", findViewById(selectedId).get);
+            intent.putExtra("level", findViewById(selectedId).getText());
 
             startActivity(intent);
         }
