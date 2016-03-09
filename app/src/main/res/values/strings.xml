@@ -8,5 +8,6 @@
     <string name="hard">Hard</string>
     <string name="English" translatable="false">English</string>
     <string name="French" translatable="false">Français</string>
+    <string name="high_scores">High Scores</string>
 
 </resources>
