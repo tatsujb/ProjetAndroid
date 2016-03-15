@@ -8,36 +8,51 @@ import android.view.ViewGroup;
 import java.lang.Override;
 
 public class HighScoresAdapter extends BaseAdapter {
-    private static LayoutInflater inflater;
 
+    private static LayoutInflater inflater;
     private Context context;
-    private int[] positions;
     private Couple<String, Long>[] tuples;
-    
-    public HighScoresAdapter(Context ctx, int[] positions, Couple<String, Long>[] tuples) {
+
+    public HighScoresAdapter(Context ctx, Couple<String, Long>[] tuples) {
         this.context = ctx;
-        this.positions = positions;
         this.tuples = tuples;
         
         inflater = (LayoutInflater) context
             .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-    
+
     @Override
     public int getCount() {
-        return positions.length;
+        return tuples.length;
     }
-    
+
+    /**
+     *
+     * @param position
+     * @return
+     */
     @Override
     public Object getItem(int position) {
         return tuples[position];
     }
-    
+
+    /**
+     *
+     * @param position
+     * @return
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
-    
+
+    /**
+     *
+     * @param position
+     * @param previousView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View previousView, ViewGroup parent) {
         View previous = previousView;

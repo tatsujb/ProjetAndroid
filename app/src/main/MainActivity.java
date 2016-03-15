@@ -1,13 +1,14 @@
-package app.src.main;
-
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.lang.Override;
 
@@ -38,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
             int selectedId = radioLevelGroup.getCheckedRadioButtonId();
 
             // find the radiobutton by returned id
-            this.radioLevelButton = (RadioButton) findViewById(selectedId);
+            radioLevelButton = (RadioButton) findViewById(selectedId);
             //activity d'origine vers nvlle activity
 
             Intent intent = new Intent(MainActivity.this, PlayActivity.class);
-            int selectedId = radioLevelGroup.getCheckedRadioButtonId()
+            int selectedId = radioLevelGroup.getCheckedRadioButtonId();
             intent.putExtra("level", findViewById(selectedId).getText());
 
             startActivity(intent);
