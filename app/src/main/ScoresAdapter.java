@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 
 import java.lang.Override;
 
-public class HighScoresAdapter extends BaseAdapter {
+import myapp.jess.home.myapplication.R;
+
+public class ScoresAdapter extends BaseAdapter {
 
     private static LayoutInflater inflater;
     private Context context;
     private Couple<String, Long>[] tuples;
 
-    public HighScoresAdapter(Context ctx, Couple<String, Long>[] tuples) {
+    public ScoresAdapter(Context ctx, Couple<String, Long>[] tuples) {
         this.context = ctx;
         this.tuples = tuples;
         
@@ -26,33 +28,16 @@ public class HighScoresAdapter extends BaseAdapter {
         return tuples.length;
     }
 
-    /**
-     *
-     * @param position
-     * @return
-     */
     @Override
     public Object getItem(int position) {
         return tuples[position];
     }
 
-    /**
-     *
-     * @param position
-     * @return
-     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
-    /**
-     *
-     * @param position
-     * @param previousView
-     * @param parent
-     * @return
-     */
     @Override
     public View getView(int position, View previousView, ViewGroup parent) {
         View previous = previousView;

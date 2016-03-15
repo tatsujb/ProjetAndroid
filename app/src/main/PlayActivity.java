@@ -3,6 +3,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import myapp.jess.home.myapplication.R;
+
 public class PlayActivity extends AppCompatActivity {
 
     private String level;

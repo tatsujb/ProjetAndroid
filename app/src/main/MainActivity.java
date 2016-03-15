@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 
 import java.lang.Override;
 
+import myapp.jess.home.myapplication.R;
+
 public class MainActivity extends AppCompatActivity {
     private Button playButton;
     private Button scoreButton;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         scoreButton.setOnClickListener(scoreListener);
     }
 
-    class playListener extends View.OnClickListener {
+    class playListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class scoreListener extends View.OnClickListener {
+    class scoreListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
